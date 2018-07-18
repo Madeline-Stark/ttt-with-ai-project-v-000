@@ -68,7 +68,7 @@ class Game
     end
 
     def turn
-      choice = current_player.move(board) #wasn't working with gets, this goes back and gets the players input through move
+      choice = current_player.move(board) #wasn't working with gets b/c nothing was passed in, this goes back and gets the players input through move
       choice = choice.to_i
       if board.valid_move?(choice)
         board.update(choice, current_player)
