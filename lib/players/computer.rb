@@ -20,8 +20,8 @@ module Players
         choice = 4
       elsif !board.taken?(6)
         choice = 6
-      elsif !board.taken?(8) 
-        choice
+      elsif !board.taken?(8)
+        choice = 8 
       end
       "#{choice}"
     end
