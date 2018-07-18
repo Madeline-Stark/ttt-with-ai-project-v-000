@@ -58,7 +58,6 @@ class Game
     end
 
     def over?
-      #saying true even if all are false
       won? || draw?
     end
 
