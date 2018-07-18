@@ -79,17 +79,15 @@ class Game
     end
 
     def play
-      until over? #over isn't working in pry-always true
-        turn #turn isn't working in pry
+      until over? 
+        turn 
       end
-      #binding.pry
-      if won? #won is working in pry
+      if won? 
         puts "Congratulations #{winner}!"
-        #finished
+        finished
       elsif draw?
-        puts "Cat's Game!" #draw is working in pry...both false though and yet game is over
-        #finished #doesn't work in pry
-        #for some reason over? is true but each individual component of over is false
+        puts "Cat's Game!" 
+        finished 
       end
     end
 
