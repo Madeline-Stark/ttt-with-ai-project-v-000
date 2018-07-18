@@ -3,7 +3,6 @@ class CLI
 
 
   def initialize
-    #@game = game
     start
   end
 
