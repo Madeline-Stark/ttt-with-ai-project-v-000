@@ -22,7 +22,7 @@ module Players
 
     def try_again
       #options = [2, 4, 6, 8]
-      if !board.taken?(choice = rand(2,4,6,8)) #(choice = rand(options))
+      if !board.taken?(choice = rand(2..8)) #(choice = rand(options))
         choice
       else
         #options.remove(choice)
