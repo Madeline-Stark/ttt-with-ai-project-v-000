@@ -24,10 +24,13 @@ def position(user_input)
 end
 
 def full?
-  all_board = @cells.all? do |space|
+  #all_board =
+  @cells.all? { |space|
     space == "X" || space == "O"
-  end
-  all_board
+  }
+  #returning true when not true...like even if all empty
+
+  #all_board
 end
 
 def turn_count

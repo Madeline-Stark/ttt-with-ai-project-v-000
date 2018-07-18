@@ -54,19 +54,12 @@ class Game
     #can't call @board[0]because it's not an array, it's an object...call board.cells
 
     def draw?
-      if won? == false && @board.full? == true
-        true
-      else
-        false
-      end
+      !won? && @board.full?
     end
 
     def over?
-      if won? || @board.full? || draw?
-        true
-      else
-        false
-      end
+      #saying true even if all are false
+      won? || draw?
     end
 
     def winner
@@ -87,61 +80,32 @@ class Game
     end
 
     def play
-      until over?
-        turn
+      until over? #over isn't working in pry-always true
+        turn #turn isn't working in pry
       end
-      if won?
+      #binding.pry
+      if won? #won is working in pry
         puts "Congratulations #{winner}!"
+        #finished
       elsif draw?
-        puts "Cat's Game!"
+        puts "Cat's Game!" #draw is working in pry...both false though and yet game is over
+        #finished #doesn't work in pry
+        #for some reason over? is true but each individual component of over is false
       end
     end
 
-  def start
-
-      puts "Welcome to Tic Tac Toe!"
-
-      puts "How many players? 0, 1, or 2?"
-
-      input = gets.strip.to_i
-
-    if input == 0
-        player_uno = Players::Computer.new
-        player_dos = Players::Computer.new
-          puts "Which Computer should go first? 1 or 2?"
-          answer = gets.strip.to_i
-            if answer == 1
-              game = Game.new(player_uno("X"), player_dos("O"))
-            else
-              game = Game.new(player_dos("X"), player_uno("O"))
-            end
-    elsif input == 1
-        player_uno = Players::Computer.new
-        player_dos = Players::Human.new
-          puts "Which should go first? Computer or human?"
-            answer = gets.strip
-          if answer == "Computer"
-            game = Game.new(player_uno("X"), player_dos("O"))
-          else
-            game = Game.new(player_dos("X"), player_uno("O"))
-          end
-
-    elsif input == 2
-      player_uno = Players::Human.new
-      player_dos = Players::Human.new
-        puts "Which player should go first? 1 or 2?"
-        answer = gets.strip.to_i
-          if answer == 1
-            game = Game.new(player_uno("X"), player_dos("O"))
-          else
-            game = Game.new(player_dos("X"), player_uno("O"))
-          end
+    def finished
+      if over?
+        puts "Would you like to play again? Y/n"
+        answer = gets.strip
+      end
+      if answer == "Y"
+        new_game = CLI.new
+      else
+        puts "Later!"
+        exit
+      end
     end
-    end
-
-    
-
-
 
 
 end

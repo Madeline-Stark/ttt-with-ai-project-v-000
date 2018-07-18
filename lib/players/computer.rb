@@ -2,18 +2,29 @@ module Players
   class Computer < Player
 
     def move(board)
-      array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        #binding.pry
-      if board.turn_count == 1
-        choice = 4
-      elsif board.valid_move?(choice = rand(1...9))
-        choice
-      else
-        array = array - choice 
-        move 
+      if !board.taken?(5)
+        choice = 5
+      elsif !board.taken?(1) 
+        choice = 1
+      elsif !board.taken?(3) 
+        choice = 3
+      elsif !board.taken?(7) 
+        choice = 7
+      elsif !board.taken?(9) 
+        choice = 9
+      else 
+        try_again
       end 
       "#{choice}" 
     end
+
+    def try_again
+      if !board.taken?(choice = rand(2,4,6,8)) 
+        choice 
+      else
+        try_again
+      end 
+    end 
 
   end
 end
