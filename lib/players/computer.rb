@@ -1,7 +1,9 @@
 module Players
   class Computer < Player
+    attr_accessor :board
 
     def move(board)
+      @board = board 
       if !board.taken?(5)
         choice = 5
       elsif !board.taken?(1)
