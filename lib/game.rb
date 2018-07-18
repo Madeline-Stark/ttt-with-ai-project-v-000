@@ -42,14 +42,16 @@ class Game
     end
 
     def won?
-      win_array = false
+      #win_array = false
       new_board = board.cells
       WIN_COMBINATIONS.each do |array|
         if new_board[array[0]] == "X" && new_board[array[1]] == "X" && new_board[array[2]] == "X" || new_board[array[0]] == "O" && new_board[array[1]] == "O" && new_board[array[2]] == "O"
-          win_array = array
+          #win_array = array
+          return array
         end
       end
-      win_array
+      #win_array
+      return false 
     end
     #can't call @board[0]because it's not an array, it's an object...call board.cells
 
