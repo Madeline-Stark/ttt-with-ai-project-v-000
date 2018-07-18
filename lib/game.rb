@@ -91,18 +91,18 @@ class Game
       end
     end
 
-    # def finished
-    #   if over?
-    #     puts "Would you like to play again? Y/n"
-    #     answer = gets.strip
-    #   end
-    #   if answer == "Y"
-    #     new_game = CLI.new
-    #   else
-    #     puts "Later!"
-    #     exit
-    #   end
-    # end
+    def finished
+      if over?
+        puts "Would you like to play again? Y/n"
+        answer = gets.strip
+      end
+      if answer == "Y"
+        new_game = CLI.new
+      else
+        puts "Later!"
+        exit
+      end
+    end
 
 
 end
