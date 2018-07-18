@@ -84,10 +84,8 @@ class Game
       end
       if won?
         puts "Congratulations #{winner}!"
-        #finished
       elsif draw?
         puts "Cat's Game!"
-        #finished
       end
     end
 
