@@ -2,18 +2,17 @@
 
 require_relative '../config/environment'
 
-game = CLI.new
+ceeli = CLI.new
 
 binding.pry
-  if game.over?
+  if ceeli.game.over?
     puts "Would you like to play again? Y/n"
     answer = gets.strip
   end
-  
+
   if answer == "Y"
-    game = CLI.new
+    ceeli = CLI.new
   else
     puts "Later!"
     exit
   end
-
