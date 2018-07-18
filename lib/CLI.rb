@@ -59,6 +59,7 @@ class CLI
       puts "Would you like to play again? Y/n"
       answer = gets.strip
     end
+    binding.pry
     if answer == "Y"
       game = CLI.new
     else
