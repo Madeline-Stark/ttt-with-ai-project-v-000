@@ -4,8 +4,7 @@ require_relative '../config/environment'
 
 ceeli = CLI.new
 
-#binding.pry
-  if ceeli.game.over?
+  if ceeli.game.over? #going into instance of game via CLI 
     puts "Would you like to play again? Y/n"
     answer = gets.strip
   end
