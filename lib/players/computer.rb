@@ -19,9 +19,11 @@ module Players
     end
 
     def try_again
-      if !board.taken?(choice = rand(2,4,6,8))
+      options = [2, 4, 6, 8]
+      if !board.taken?(choice = rand(options))
         choice
       else
+        options.remove(choice)
         try_again
       end
     end
