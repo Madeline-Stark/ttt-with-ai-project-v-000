@@ -64,6 +64,7 @@ class CLI
     else
       puts "Later!"
       exit
+    end
   end
 
 
