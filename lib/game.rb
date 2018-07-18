@@ -79,14 +79,14 @@ class Game
     end
 
     def play
-      until over? 
-        turn 
+      until over?
+        turn
       end
-      if won? 
+      if won?
         puts "Congratulations #{winner}!"
         finished
       elsif draw?
-        puts "Cat's Game!" 
+        puts "Cat's Game!"
         finished 
       end
     end
