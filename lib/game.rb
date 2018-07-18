@@ -84,25 +84,43 @@ class Game
       end
       if won?
         puts "Congratulations #{winner}!"
-        finished
+        if over?
+          puts "Would you like to play again? Y/n"
+          answer = gets.strip
+        end
+        if answer == "Y"
+          new_game = CLI.new
+        else
+          puts "Later!"
+          exit
+        end
       elsif draw?
         puts "Cat's Game!"
-        finished 
+        if over?
+          puts "Would you like to play again? Y/n"
+          answer = gets.strip
+        end
+        if answer == "Y"
+          new_game = CLI.new
+        else
+          puts "Later!"
+          exit
+        end
       end
     end
 
-    def finished
-      if over?
-        puts "Would you like to play again? Y/n"
-        answer = gets.strip
-      end
-      if answer == "Y"
-        new_game = CLI.new
-      else
-        puts "Later!"
-        exit
-      end
-    end
+    # def finished
+    #   if over?
+    #     puts "Would you like to play again? Y/n"
+    #     answer = gets.strip
+    #   end
+    #   if answer == "Y"
+    #     new_game = CLI.new
+    #   else
+    #     puts "Later!"
+    #     exit
+    #   end
+    # end
 
 
 end
